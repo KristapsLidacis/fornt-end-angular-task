@@ -1,0 +1,8 @@
+<div class="location-response" *ngIf="locationResponse$ | async as locationResponse">
+  <div *ngFor="let location of locationResponse.results" class="location-card">
+    <div>{{ location.name }}</div>
+    <div>{{ location.type }}</div>
+    <div>{{ location.dimension }}</div>
+    <div>{{ location.created | date: "dd.MM.yyyy" }}</div>
+  </div>-->
+</div>

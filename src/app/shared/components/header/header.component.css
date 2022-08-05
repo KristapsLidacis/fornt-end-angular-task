@@ -1,0 +1,28 @@
+.header{
+  background-color: #F7D7C4;
+  opacity: 75%;
+  padding: 5px;
+}
+.header:hover{
+  opacity:100%;
+}
+.navigation{
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.link{
+  text-decoration: none;
+  color: #C2C3C5;
+  font-family: 'Anton', sans-serif;
+}
+.link:hover{
+  color: #999A9C;
+}
+.active{
+   color: #999A9C;
+   border-bottom: 1px solid #999A9C;
+  -webkit-text-stroke: 0.1px black;
+ }
+
+

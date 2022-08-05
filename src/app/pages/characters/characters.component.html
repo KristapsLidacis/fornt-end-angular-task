@@ -1,0 +1,8 @@
+<div class="character-container" *ngIf="charactersResponse$ | async as charactersResponse">
+  <div *ngFor="let character of charactersResponse.results" class="character-card">
+    <div><img [src]="character.image" [alt]="character.name"></div>
+    <div>{{ character.name }}</div>
+    <div>{{ character.species }}</div>
+    <div>{{ character.created | date: "dd.MM.yyyy" }}</div>
+  </div>
+</div>

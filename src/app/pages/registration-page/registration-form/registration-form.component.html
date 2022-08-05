@@ -1,0 +1,42 @@
+
+  <form [formGroup]="registrationForm" class="registration-form">
+    <div class="form-group">
+      <label class="form-label">
+        <span>Name </span>
+        <input formControlName="name" type="text"/>
+      </label>
+      <small *ngIf="registrationForm.get('name')?.hasError('required') && registrationForm.get('name')?.touched" class="error">Required</small>
+      <small *ngIf="registrationForm.get('name')?.hasError('minLength') && registrationForm.get('name')?.touched" class="error">Too short</small>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">
+        <span>Surname </span>
+        <input formControlName="surname" type="text">
+      </label>
+      <small *ngIf="registrationForm.get('surname')?.hasError('required') && registrationForm.get('surname')?.touched" class="error">Required</small>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">
+        <span>Country</span>
+        <select formControlName="country">
+          <option value="LV">Latvia</option>
+          <option value="EE">Estonia</option>
+          <option value="LT">Lithuania</option>
+        </select>
+      </label>
+      <small *ngIf="registrationForm.get('country')?.hasError('required') && registrationForm.get('country')?.touched" class="error">Required</small>
+    </div>
+
+    <div class="form-group">
+      <label class="acceptTerms">
+        <span>Accept terms of service</span>
+        <input formControlName="acceptTermsOfService" type="checkbox">
+      </label>
+      <small *ngIf="registrationForm.get('acceptTermsOfService')?.hasError('required') && registrationForm.get('acceptTermsOfService')?.touched">Required</small>
+    </div>
+    <div>
+      <button [disabled]="registrationForm.invalid" (click)="submitForm()">Register</button>
+    </div>
+  </form>
